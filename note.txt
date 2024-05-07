@@ -1,0 +1,13 @@
+to create blog folder
+
+create folder - 
+css > style.css , component>  header.php footer.php,  js, photo, 
+
+create file - 
+index.php, login.php, logout.php, register.php, article-create.php, article-view.php, article-index.php, article-edit.php, article-delete.php, db.php
+
+1. article CRUD
+
+
+2. Auth
+
