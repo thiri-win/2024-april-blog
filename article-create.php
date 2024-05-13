@@ -34,24 +34,8 @@ if (isset($_POST['add-article'])) {
 
 <form action="" method="post" enctype="multipart/form-data">
     <!-- error -->
-    <div>
-        <ul class="text-danger">
-            <?php
-            // if($error) {
-            //     foreach($error as $e ) {
-            //         echo "<li>".$e."</li>";
-            //     }
-            // }
-            ?>
-            <?php if(isset($error)): ?>
-                <?php if($error) : ?>
-                    <?php foreach($error as $e ) : ?>
-                        <li><?php echo $e; ?></li>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            <?php endif; ?>
-        </ul>
-    </div>
+    <?php include "component/error.php" ?>
+    
     <div class="my-3">
         <label for="title">Title:</label>
         <input type="text" name="title" id="title" class="form-control" placeholder="Enter Your Title ... ">

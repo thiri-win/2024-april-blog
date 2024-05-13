@@ -20,10 +20,12 @@ if (isset($_GET['id'])) {
         <h2 class="mb-2"><?= $article['title'] ?></h2>
         <p class="mb-2"><?= $article['about'] ?></p>
         <img src="<?= $article['image'] ?>" alt="" height="300rem" class="mb-2">
-        <p>post at <i><?= $article['posted_at'] ?></i></p>
+        <p>post at 
+            <i><?= date_format(date_create($article['posted_at']), 'd-M-Y') ?></i>
+        </p>
+        <a href="article-edit.php?id=<?= $article['id'] ?>">Edit</a>
     <?php else: ?>
         <p class="fs-2 text-center">No Match article.</p>    
     <?php endif; ?>
-
 
 <?php include 'component/footer.php'; ?>
