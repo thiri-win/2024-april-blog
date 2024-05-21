@@ -23,8 +23,12 @@ if (isset($_GET['id'])) {
         <p>post at 
             <i><?= date_format(date_create($article['posted_at']), 'd-M-Y') ?></i>
         </p>
+
+        <?php if(isset($_SESSION['auth'])): ?>
         <a href="article-edit.php?id=<?= $article['id'] ?>">Edit</a>
         <a href="article-delete.php?id=<?= $article['id'] ?>" class="text-danger">Delete</a>
+        <?php endif; ?>
+
     <?php else: ?>
         <p class="fs-2 text-center">No Match article.</p>    
     <?php endif; ?>

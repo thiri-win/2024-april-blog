@@ -46,7 +46,10 @@ if (isset($_POST['update-article'])) {
 
 <?php include 'component/header.php'; ?>
 
+<?php if(isset($_SESSION['auth'])): ?>
+
 <?php if(isset($article)):  ?>
+
 <h1 class="mb-3">Update Article</h1>
 
 <form action="" method="post" enctype="multipart/form-data">
@@ -75,6 +78,15 @@ if (isset($_POST['update-article'])) {
 <?php else: ?>
 
 <p class="fs-2 text-center">No Matching article.</p>
+
+<?php endif; ?>
+
+<?php else: ?>
+
+    <p class="fs-2 text-center">
+        <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+        You are not authorized.
+    </p>
 
 <?php endif; ?>
 

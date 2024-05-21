@@ -1,3 +1,11 @@
+<?php
+
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,18 +45,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">Blog</a>
                     </li>
+                    <?php if(isset($_SESSION['auth']) && $_SESSION['auth']== 1): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><?= $_SESSION['name'] ?></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li>
+                    <?php else: ?>
                     <li class="nav-item">
                         <a class="nav-link" href="login.php">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="register.php">Register</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Logout</a>
-                    </li>
+                    <?php endif; ?>
+                    
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
